@@ -68,12 +68,10 @@ public class MyALDAList<Type> implements ALDAList<Type> {
             	nodeUsed = true;
             	size--;
             }
-
         };
         return iter;
     }
-	
-	
+		
 
 	@Override
 	public void add(Type element) {
@@ -130,7 +128,6 @@ public class MyALDAList<Type> implements ALDAList<Type> {
 	public Type remove(int index) {
 		if(index>=size||0>index) throw new IndexOutOfBoundsException();
 		Node<Type> removed = null;
-		//Removing end node
 		if(index == size-1){
 			Node<Type> temp = getNode(index-1);
 			removed = temp.next;
@@ -161,7 +158,6 @@ public class MyALDAList<Type> implements ALDAList<Type> {
 	public Type get(int index) {
 		if(index>=size||0>index) throw new IndexOutOfBoundsException();
 		Node<Type> node = first.next;
-
 		for(int i = 0; i < index; i++){
 			Node<Type> next = node.next;
 			node = next;
@@ -171,7 +167,6 @@ public class MyALDAList<Type> implements ALDAList<Type> {
 
 	@Override
 	public boolean contains(Type data) {
-
 		for(Node<Type> node = first.next; node.next != null ; node = node.next){
 			if(node.data != null && node.data.equals(data)){
 				return true;
@@ -204,8 +199,6 @@ public class MyALDAList<Type> implements ALDAList<Type> {
 		return size;
 	}
 
-
-
 	private static class Node<T> {
 		T data;
 		Node next;
@@ -221,7 +214,6 @@ public class MyALDAList<Type> implements ALDAList<Type> {
 			result += node.data.toString() + ", ";
 			node = node.next;
 		}
-
 		if(result.length()>1){
 			result = result.substring(0, result.length()-2);
 		}
