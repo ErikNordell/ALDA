@@ -3,7 +3,7 @@ package alda.tree;
 public class Run {
 
 	public static void main(String[] args) {
-		
+		System.out.println("Hi");
 		/*
 		BinarySearchTree<Integer> tree = new BinarySearchTree<>();
 		
